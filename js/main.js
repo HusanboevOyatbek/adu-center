@@ -176,7 +176,7 @@ innerMadal.addEventListener("submit", async function (e) {
     options.emile = e.target[0].value;
     options.photro = e.target[1].value;
     options.firstName = e.target[2].value
-    options.lastNAme = e.target[3].value
+    options.lastName = e.target[3].value
     options.avatar = e.target[4].value
     options.profession = e.target[5].value
     options.experiens = e.target[6].value
