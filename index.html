@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'qutuvchilar</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script defer src="./js/main.js"></script>
+</head>
+
+<body>
+
+    <header class="py-[10px]">
+        <form class="max-w-2xl mx-auto">
+            <div class="flex rounded-base -space-x-0.5">
+                <label for="search-dropdown" class="block mb-2.5 text-sm font-medium text-heading sr-only ">Your
+                    Email</label>
+                <button id="dropdown-button" data-dropdown-toggle="dropdown" type="button"
+                    class=" rounded-[5px] inline-flex items-center shrink-0 z-10 text-body   hover:text-heading border  text-sm px-4 py-2.5 focus:outline-none">
+                    <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.143 4H4.857A.857.857 0 0 0 4 4.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 10 9.143V4.857A.857.857 0 0 0 9.143 4Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 20 9.143V4.857A.857.857 0 0 0 19.143 4Zm-10 10H4.857a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286A.857.857 0 0 0 9.143 14Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286a.857.857 0 0 0-.857-.857Z" />
+                    </svg>
+                    Teacher push
+                    
+                </button>
+                <div id="dropdown"
+                    class="z-10 hidden bg-neutral-primary-medium  rounded-[10px] ">
+                    <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdown-button">
+                        <li>
+                            <a href="#"
+                                class="block p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded-md">Shopping</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded-md">Images</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded-md">News</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded-md">Finance</a>
+                        </li>
+                    </ul>
+                </div>
+                <input type="search" id="search-dropdown" id="input-group-1"
+                    class="px-3 py-2.5 bg-neutral-secondary-medium border text-heading text-sm focus:ring-brand focus:border-brand block w-full px-3 py-2.5 placeholder:text-body"
+                    placeholder="Search for products" required>
+                
+            </div>
+        </form>
+
+
+
+
+
+    </header>
+
+    <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
+        type="button"
+        class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <span class="sr-only">Open sidebar</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd"
+                d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+            </path>
+        </svg>
+    </button>
+
+    <aside id="default-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0   "
+        aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+            <ul class="space-y-2 font-medium">
+                <li>
+                    <a href="#"
+                        class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <img src="./imgs/teacher.svg" alt="">
+                        <span class="ms-3">O'qituvchilar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./pages/stutents.html"
+                        class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <img class="max-w-[30px]" src="./imgs/students.png" alt="">
+                        <span class="flex-1 ms-3 whitespace-nowrap">O'quvchilar</span>
+
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </aside>
+
+    <main class="pl-[270px] ">
+        <section>
+            <div class="container mx-auto">
+                <div id="teachers" class="grid grid-cols-3 gap-[20px]">
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    
+
+
+
+
+
+<div id="outer-modals"
+    class="fixed hidden inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 transition-all ">
+
+    <form
+    id="iner-madal"
+        class="w-full max-w-3xl bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 md:p-10 relative animate-[fadeIn_0.3s_ease]">
+
+        
+
+        <h2 class="text-2xl font-semibold text-gray-800  text-center mb-8">
+            Create New Account
+        </h2>
+
+        <!-- Grid ichida inputlar -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+            <!-- Email -->
+            <div class="relative">
+                <input type="email" id="email" name="email"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder="   Email Address" required />
+                
+            </div>
+
+            <!-- Phone -->
+            <div class="relative">
+                <input type="tel" id="phone" name="phone"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder="Phone Number (+998 ...) " required />
+                
+            </div>
+
+            <!-- First Name -->
+            <div class="relative">
+                <input type="text" id="firstName" name="firstName"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder=" First Name " required />
+                
+            </div>
+
+            <!-- Last Name -->
+            <div class="relative">
+                <input type="text" id="lastName" name="lastName"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder="   Last Name" required />
+                
+            </div>
+
+            <!-- Avatar -->
+            <div class="relative">
+                <input type="url" id="avatar" name="avatar"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder="  Image URL" required />
+                
+            </div>
+
+            <!-- Profession -->
+            <div class="relative">
+                <input type="text" id="profession" name="profession"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder=" Profession " required />
+              
+            </div>
+
+            <!-- Experience -->
+            <div class="relative">
+                <input type="number" id="experience" name="experience" min="0"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder="Experience (years) " required />
+               
+            </div>
+
+            <!-- Age -->
+            <div class="relative">
+                <input type="number" id="age" name="age" min="0"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder="   Age " required />
+                
+            </div>
+
+            <!-- Reating -->
+            <div class="relative">
+                <input type="number" id="reating" name="reating" min="0"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder=" Reating" required />
+               
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="relative">
+                <input type="url" id="linkedin" name="linkedin"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder=" LinkedIn URL " required />
+                
+            </div>
+
+            <!-- Telegram -->
+            <div class="relative">
+                <input type="text" id="telegram" name="telegram"
+                    class="peer w-full border-b-2 border-gray-300 bg-transparent py-3 text-sm text-gray-900  focus:border-blue-500 focus:outline-none"
+                    placeholder="Telegram Username " required />
+               
+            </div>
+
+        </div>
+
+        <!-- Gender Checkbox -->
+        <div class="flex items-center justify-center gap-2 mt-6">
+            <input id="isMale" name="isMale" type="checkbox"
+                class="w-4 h-4 border border-gray-300 rounded bg-gray-100 focus:ring-2 focus:ring-blue-500">
+            <label for="isMale" class="select-none text-sm font-medium text-gray-700 ">
+                Male?
+            </label>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit"
+            class="mt-8 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all">
+            Submit
+        </button>
+
+    </form>
+</div>
+
+
+
+
+
+</body>
+
+</html>
